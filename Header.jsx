@@ -1,5 +1,5 @@
 //project to chnage
-import QuentlexLogo from "../k (1)/src/components/ui/QuentlexLogo"
+import QuentlexLogo from "./src/components/ui/QuentlexLogo";
 const Header = () => {
   return (
     <header className="py-2 border-b border-gray-100">
