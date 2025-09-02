@@ -1,6 +1,6 @@
 import { TrendingUp, Clock, DollarSign, Shield } from "lucide-react"
 
-const BenefitsSection = () => {
+const BenefitsSection = ({id}) => {
   const benefits = [
     {
       icon: Clock,
@@ -20,7 +20,7 @@ const BenefitsSection = () => {
   ]
 
   return (
-    <section className="ql-section">
+    <section id={id} className="ql-section">
       <div className="ql-container">
         <div className="text-center mb-16">
           <h2 className="ql-h2 mx-auto mb-6">

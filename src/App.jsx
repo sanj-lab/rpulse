@@ -17,13 +17,13 @@ function App() {
       <Header />
       <main>
         <HeroSection />
-        <ProblemSection />
-        <SolutionSection />
+        <ProblemSection id="problem" />
+        <SolutionSection id="solutions" />
         <ProcessSection />
         <ReviewerSection />
         <GatekeeperSection />
-        <BenefitsSection />
-        <TrustSection />
+        <BenefitsSection id="compliance" />
+        <TrustSection id="backed-by" />
         <CTASection />
       </main>
       <Footer />

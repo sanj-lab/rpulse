@@ -18,23 +18,23 @@ const Header = () => {
           <nav className="hidden md:flex">
             <ul className="flex space-x-8">
               <li>
-                <a href="#" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
-                  Product
+                <a href="#problem" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
+                  Problem
                 </a>
               </li>
               <li>
-                <a href="#" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
+                <a href="#solutions" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
                   Solutions
                 </a>
               </li>
               <li>
-                <a href="#" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
-                  About
+                <a href="#compliance" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
+                  Compliance
                 </a>
               </li>
               <li>
-                <a href="#" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
-                  Contact
+                <a href="#backed-by" className="ql-text-warm hover:ql-text-dark transition-colors duration-200 ql-focus-visible">
+                  Backed By
                 </a>
               </li>
             </ul>

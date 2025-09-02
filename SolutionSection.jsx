@@ -1,6 +1,6 @@
 import { CheckCircle, Shield, Link } from "lucide-react"
 
-const SolutionSection = () => {
+const SolutionSection = ({id}) => {
   const solutions = [
     {
       icon: CheckCircle,
@@ -23,7 +23,7 @@ const SolutionSection = () => {
   ]
 
   return (
-    <section className="ql-product-band ql-section">
+    <section id={id} className="ql-product-band ql-section">
       <div className="ql-container">
         <div className="text-center mb-16">
           <h2 className="ql-h2 mx-auto mb-6">
