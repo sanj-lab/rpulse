@@ -1,0 +1,522 @@
+/* === QUENTLEX INSTITUTIONAL BRAND SYSTEM === */
+@import './App.css';
+
+/* Project styles */
+
+/* Brand Variables - Exact Specifications */
+:root {
+  /* Primary Brand Colors */
+  --ql-gold: #B48D3A;
+  --ql-dark: #212A35;
+  
+  /* Secondary Colors */
+  --ql-navy: #1A2332;
+  --ql-warm: #6B7280;
+  --ql-light: #F3F4F6;
+  
+  /* Accent Colors */
+  --ql-blue: #3B82F6;
+  --ql-green: #10B981;
+  --ql-amber: #F59E0B;
+  
+  /* Neutrals */
+  --ql-white: #FFFFFF;
+  --ql-off: #FAFAFA;
+  --ql-char: #374151;
+  
+  /* Layout System */
+  --content-width: 1140px;
+  --gutter-mobile: 24px;
+  --gutter-desktop: 32px;
+  --baseline: 8px;
+  --section-spacing-sm: 64px;
+  --section-spacing-lg: 120px;
+  --card-radius: 8px;
+  
+  /* Typography System */
+  --font-serif: 'Spectral', Georgia, Times, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* === TYPOGRAPHY HIERARCHY === */
+
+/* Institutional Authority Typography */
+.ql-h1 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ql-dark);
+  max-width: 35ch;
+}
+
+.ql-h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ql-dark);
+  max-width: 45ch;
+}
+
+.ql-h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.3;
+  color: var(--ql-dark);
+  max-width: 55ch;
+}
+
+.ql-body-large {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ql-warm);
+  max-width: 65ch;
+}
+
+.ql-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ql-warm);
+  max-width: 75ch;
+}
+
+.ql-caption {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--ql-warm);
+}
+
+/* === LUXURY GRADIENT SPECIFICATIONS === */
+
+/* 1. Luxury Neutral Gradient (Legal Gravitas) */
+.ql-hero-bg {
+  background: 
+    linear-gradient(135deg, #FAFAFA 0%, #F3F4F6 100%),
+    linear-gradient(135deg, rgba(180, 141, 58, 0.05) 0%, rgba(180, 141, 58, 0.02) 100%),
+    radial-gradient(1200px 600px at 20% 10%, rgba(180, 141, 58, 0.08) 0%, transparent 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ql-hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 2. Clean SaaS Gradient (Modern Clarity) */
+.ql-product-band {
+  background: 
+    linear-gradient(180deg, #FFFFFF 0%, rgba(107, 114, 128, 0.08) 100%),
+    linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.02) 50%, transparent 100%);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--ql-blue), var(--ql-gold)) 1;
+  position: relative;
+}
+
+.ql-product-band::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--ql-blue) 20%, var(--ql-gold) 80%, transparent 100%);
+}
+
+/* 3. Subtle Depth Gradient (Web3 Technical Edge) */
+.ql-reviewer-band {
+  background: 
+    linear-gradient(135deg, #F3F4F6 0%, rgba(26, 35, 50, 0.08) 100%),
+    linear-gradient(45deg, rgba(16, 185, 129, 0.03) 0%, transparent 60%);
+  position: relative;
+}
+
+.ql-reviewer-band::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at center top, rgba(180, 141, 58, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* 4. Regal Contrast Gradient (Highlight Banner) */
+.ql-cta-banner {
+  background: 
+    linear-gradient(135deg, #FFFFFF 0%, rgba(55, 65, 81, 0.12) 100%),
+    linear-gradient(45deg, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at center, rgba(16, 185, 129, 0.03) 0%, transparent 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ql-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(180, 141, 58, 0.02) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* === CRYPTOGRAPHIC HASH PATTERN === */
+
+.ql-hash-pattern {
+  position: relative;
+}
+
+.ql-hash-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(26,35,50,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(26,35,50,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ql-hash-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === LUXURY BUTTON SYSTEM === */
+
+.ql-btn-primary {
+  background: linear-gradient(135deg, var(--ql-blue) 0%, #2563EB 100%);
+  color: var(--ql-white);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: var(--card-radius);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 
+    0 4px 12px rgba(59, 130, 246, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ql-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ql-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 8px 24px rgba(59, 130, 246, 0.35),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ql-btn-primary:hover::before {
+  left: 100%;
+}
+
+.ql-btn-secondary {
+  background: linear-gradient(135deg, transparent 0%, rgba(180, 141, 58, 0.05) 100%);
+  color: var(--ql-dark);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: var(--card-radius);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ql-btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--ql-gold), #A67C2A);
+  border-radius: inherit;
+  padding: 2px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+.ql-btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, var(--ql-gold) 0%, #A67C2A 100%);
+  color: var(--ql-white);
+  box-shadow: 
+    0 8px 24px rgba(180, 141, 58, 0.35),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ql-btn-verify {
+  background: linear-gradient(135deg, var(--ql-green) 0%, #059669 100%);
+  color: var(--ql-white);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--card-radius);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-size: 0.875rem;
+  box-shadow: 
+    0 3px 8px rgba(16, 185, 129, 0.25),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ql-btn-verify:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 
+    0 6px 16px rgba(16, 185, 129, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Premium Ripple Effect for Verify Button */
+.ql-btn-verify::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 400ms cubic-bezier(0.2, 0.8, 0.2, 1), height 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ql-btn-verify:active::after {
+  width: 120px;
+  height: 120px;
+}
+
+/* === LAYOUT SYSTEM === */
+
+.ql-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter-mobile);
+}
+
+@media (min-width: 768px) {
+  .ql-container {
+    padding: 0 var(--gutter-desktop);
+  }
+}
+
+.ql-section {
+  padding: var(--section-spacing-sm) 0;
+}
+
+@media (min-width: 768px) {
+  .ql-section {
+    padding: var(--section-spacing-lg) 0;
+  }
+}
+
+.ql-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter-mobile);
+}
+
+@media (min-width: 768px) {
+  .ql-grid-12 {
+    gap: var(--gutter-desktop);
+  }
+}
+
+/* === LUXURY CARD SYSTEM === */
+
+.ql-card {
+  background: 
+    linear-gradient(135deg, #FFFFFF 0%, rgba(243, 244, 246, 0.5) 100%),
+    linear-gradient(45deg, rgba(180, 141, 58, 0.02) 0%, transparent 60%);
+  border-radius: calc(var(--card-radius) * 1.5);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(107, 114, 128, 0.08);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ql-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(180, 141, 58, 0.2) 50%, transparent 100%);
+}
+
+.ql-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.ql-card-elevated {
+  background: 
+    linear-gradient(135deg, #FFFFFF 0%, rgba(243, 244, 246, 0.3) 100%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.03) 0%, transparent 60%);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 0 0 1px rgba(180, 141, 58, 0.05);
+  border: 1px solid rgba(180, 141, 58, 0.1);
+}
+
+.ql-card-elevated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ql-card-elevated:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.15),
+    0 6px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px rgba(180, 141, 58, 0.08);
+}
+
+/* === ANIMATION SYSTEM === */
+
+.ql-fade-in-up {
+  animation: qlFadeInUp 600ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes qlFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ql-donut-animate {
+  animation: qlDonutFill 300ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes qlDonutFill {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 88 100;
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.ql-focus-visible:focus-visible {
+  outline: 2px solid var(--ql-blue);
+  outline-offset: 2px;
+}
+
+/* === BASE STYLES === */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ql-dark);
+  background: var(--ql-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === UTILITY CLASSES === */
+
+.ql-text-gold { color: var(--ql-gold); }
+.ql-text-dark { color: var(--ql-dark); }
+.ql-text-navy { color: var(--ql-navy); }
+.ql-text-warm { color: var(--ql-warm); }
+.ql-text-blue { color: var(--ql-blue); }
+.ql-text-green { color: var(--ql-green); }
+.ql-text-amber { color: var(--ql-amber); }
+
+.ql-bg-gold { background-color: var(--ql-gold); }
+.ql-bg-dark { background-color: var(--ql-dark); }
+.ql-bg-navy { background-color: var(--ql-navy); }
+.ql-bg-light { background-color: var(--ql-light); }
+.ql-bg-off { background-color: var(--ql-off); }
+.ql-bg-blue { background-color: var(--ql-blue); }
+.ql-bg-green { background-color: var(--ql-green); }
