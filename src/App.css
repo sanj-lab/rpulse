@@ -1,28 +1,30 @@
 /* === QUENTLEX INSTITUTIONAL BRAND SYSTEM === */
-@import './App.css';
 
-/* Project styles */
-
-/* Brand Variables - Exact Specifications */
+/* Brand Variables - Exact Quentlex Specifications */
 :root {
-  /* Primary Brand Colors */
-  --ql-gold: #B48D3A;
-  --ql-dark: #212A35;
+  /* PRIMARY COLORS */
+  --ql-gold: 180 141 58;           /* #B48D3A - Main brand gold */
+  --ql-dark: 33 42 53;             /* #212A35 - Wordmark color, primary text */
   
-  /* Secondary Colors */
-  --ql-navy: #1A2332;
-  --ql-warm: #6B7280;
-  --ql-light: #F3F4F6;
+  /* SECONDARY COLORS */  
+  --ql-navy: 26 35 50;             /* #1A2332 - Headers and emphasis */
+  --ql-warm: 107 114 128;          /* #6B7280 - Body text and secondary */
+  --ql-light: 243 244 246;         /* #F3F4F6 - Backgrounds and dividers */
   
-  /* Accent Colors */
-  --ql-blue: #3B82F6;
-  --ql-green: #10B981;
-  --ql-amber: #F59E0B;
+  /* ACCENT COLORS */
+  --ql-trust-blue: 59 130 246;     /* #3B82F6 - Links, buttons, informational */
+  --ql-success-green: 16 185 129;  /* #10B981 - Success states, positive */
+  --ql-alert-amber: 245 158 11;    /* #F59E0B - Warnings, attention */
   
-  /* Neutrals */
-  --ql-white: #FFFFFF;
-  --ql-off: #FAFAFA;
-  --ql-char: #374151;
+  /* NEUTRAL COLORS */
+  --ql-white: 255 255 255;         /* #FFFFFF - Clean backgrounds */
+  --ql-off: 250 250 250;           /* #FAFAFA - Softer backgrounds */
+  --ql-char: 55 65 81;             /* #374151 - Strong text contrast */
+
+  /* LUXURY GRADIENT COLORS */
+  --ql-gold-light: 200 171 88;     /* Lighter gold variant */
+  --ql-gold-dark: 150 111 28;      /* Darker gold variant */
+  --ql-luxury-bg: 252 252 253;     /* Ultra-light luxury background */
   
   /* Layout System */
   --content-width: 1140px;
@@ -98,12 +100,22 @@
 
 /* === LUXURY GRADIENT SPECIFICATIONS === */
 
-/* 1. Luxury Neutral Gradient (Legal Gravitas) */
+/* 1. Ultra-Luxury Hero Gradient */
 .ql-hero-bg {
   background: 
-    linear-gradient(135deg, #FAFAFA 0%, #F3F4F6 100%),
-    linear-gradient(135deg, rgba(180, 141, 58, 0.05) 0%, rgba(180, 141, 58, 0.02) 100%),
-    radial-gradient(1200px 600px at 20% 10%, rgba(180, 141, 58, 0.08) 0%, transparent 70%);
+    linear-gradient(135deg, 
+      hsl(var(--ql-white)) 0%, 
+      hsl(var(--ql-luxury-bg)) 40%, 
+      hsl(var(--ql-light)) 100%
+    ),
+    radial-gradient(ellipse at top left, 
+      hsla(var(--ql-gold) / 0.08) 0%, 
+      transparent 50%
+    ),
+    radial-gradient(ellipse at bottom right, 
+      hsla(var(--ql-trust-blue) / 0.04) 0%, 
+      transparent 50%
+    );
   position: relative;
   overflow: hidden;
 }
@@ -116,19 +128,33 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+    linear-gradient(45deg, 
+      transparent 0%, 
+      hsla(var(--ql-gold) / 0.02) 25%, 
+      transparent 50%, 
+      hsla(var(--ql-success-green) / 0.015) 75%, 
+      transparent 100%
+    );
   pointer-events: none;
   z-index: 0;
 }
 
-/* 2. Clean SaaS Gradient (Modern Clarity) */
+/* 2. Enterprise Product Gradient */
 .ql-product-band {
   background: 
-    linear-gradient(180deg, #FFFFFF 0%, rgba(107, 114, 128, 0.08) 100%),
-    linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.02) 50%, transparent 100%);
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, var(--ql-blue), var(--ql-gold)) 1;
+    linear-gradient(180deg, 
+      hsl(var(--ql-white)) 0%, 
+      hsl(var(--ql-off)) 100%
+    ),
+    radial-gradient(ellipse at center, 
+      hsla(var(--ql-trust-blue) / 0.03) 0%, 
+      transparent 70%
+    );
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, 
+    hsl(var(--ql-gold)), 
+    hsl(var(--ql-trust-blue))
+  ) 1;
   position: relative;
 }
 
@@ -139,14 +165,29 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--ql-blue) 20%, var(--ql-gold) 80%, transparent 100%);
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsla(var(--ql-gold) / 0.6) 20%, 
+    hsla(var(--ql-trust-blue) / 0.6) 80%, 
+    transparent 100%
+  );
 }
 
-/* 3. Subtle Depth Gradient (Web3 Technical Edge) */
+/* 3. Luxury Reviewer Gradient */
 .ql-reviewer-band {
   background: 
-    linear-gradient(135deg, #F3F4F6 0%, rgba(26, 35, 50, 0.08) 100%),
-    linear-gradient(45deg, rgba(16, 185, 129, 0.03) 0%, transparent 60%);
+    linear-gradient(135deg, 
+      hsl(var(--ql-luxury-bg)) 0%, 
+      hsl(var(--ql-light)) 100%
+    ),
+    radial-gradient(ellipse at top right, 
+      hsla(var(--ql-gold) / 0.06) 0%, 
+      transparent 60%
+    ),
+    radial-gradient(ellipse at bottom left, 
+      hsla(var(--ql-success-green) / 0.03) 0%, 
+      transparent 60%
+    );
   position: relative;
 }
 
@@ -158,16 +199,26 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(ellipse at center top, rgba(180, 141, 58, 0.04) 0%, transparent 70%);
+    linear-gradient(45deg, 
+      transparent 30%, 
+      hsla(var(--ql-gold) / 0.02) 50%, 
+      transparent 70%
+    );
   pointer-events: none;
 }
 
-/* 4. Regal Contrast Gradient (Highlight Banner) */
+/* 4. Premium CTA Gradient */
 .ql-cta-banner {
   background: 
-    linear-gradient(135deg, #FFFFFF 0%, rgba(55, 65, 81, 0.12) 100%),
-    linear-gradient(45deg, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
-    radial-gradient(ellipse at center, rgba(16, 185, 129, 0.03) 0%, transparent 70%);
+    linear-gradient(135deg, 
+      hsl(var(--ql-white)) 0%, 
+      hsl(var(--ql-luxury-bg)) 50%, 
+      hsl(var(--ql-off)) 100%
+    ),
+    radial-gradient(ellipse at center, 
+      hsla(var(--ql-gold) / 0.05) 0%, 
+      transparent 70%
+    );
   position: relative;
   overflow: hidden;
 }
@@ -180,7 +231,11 @@
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(90deg, transparent 0%, rgba(180, 141, 58, 0.02) 50%, transparent 100%);
+    linear-gradient(90deg, 
+      transparent 0%, 
+      hsla(var(--ql-gold) / 0.04) 50%, 
+      transparent 100%
+    );
   pointer-events: none;
 }
 
@@ -213,18 +268,19 @@
 /* === LUXURY BUTTON SYSTEM === */
 
 .ql-btn-primary {
-  background: linear-gradient(135deg, var(--ql-blue) 0%, #2563EB 100%);
-  color: var(--ql-white);
+  background: linear-gradient(135deg, hsl(var(--ql-trust-blue)) 0%, hsl(37 99% 48%) 100%);
+  color: hsl(var(--ql-white));
   font-family: var(--font-sans);
   font-weight: 500;
   padding: 16px 32px;
   border-radius: var(--card-radius);
   border: none;
   cursor: pointer;
-  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
   box-shadow: 
-    0 4px 12px rgba(59, 130, 246, 0.25),
-    0 2px 4px rgba(0, 0, 0, 0.1);
+    0 4px 12px hsla(var(--ql-trust-blue) / 0.25),
+    0 2px 4px hsla(0 0% 0% / 0.1),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.2);
   font-size: 1rem;
   position: relative;
   overflow: hidden;
@@ -237,15 +293,16 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, hsla(var(--ql-white) / 0.25), transparent);
   transition: left 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .ql-btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: 
-    0 8px 24px rgba(59, 130, 246, 0.35),
-    0 4px 8px rgba(0, 0, 0, 0.15);
+    0 12px 32px hsla(var(--ql-trust-blue) / 0.4),
+    0 6px 16px hsla(0 0% 0% / 0.15),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.3);
 }
 
 .ql-btn-primary:hover::before {
@@ -253,48 +310,56 @@
 }
 
 .ql-btn-secondary {
-  background: linear-gradient(135deg, transparent 0%, rgba(180, 141, 58, 0.05) 100%);
-  color: var(--ql-dark);
+  background: 
+    linear-gradient(135deg, 
+      hsla(var(--ql-gold) / 0.08) 0%, 
+      hsla(var(--ql-gold) / 0.03) 100%
+    );
+  color: hsl(var(--ql-dark));
   font-family: var(--font-sans);
   font-weight: 500;
   padding: 16px 32px;
   border-radius: var(--card-radius);
-  border: 2px solid transparent;
-  background-clip: padding-box;
+  border: 2px solid hsla(var(--ql-gold) / 0.2);
   cursor: pointer;
-  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
   font-size: 1rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    0 3px 8px hsla(var(--ql-gold) / 0.15),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.8);
 }
 
 .ql-btn-secondary::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, var(--ql-gold), #A67C2A);
-  border-radius: inherit;
-  padding: 2px;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(var(--ql-gold) / 0.1), transparent);
+  transition: left 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .ql-btn-secondary:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(135deg, var(--ql-gold) 0%, #A67C2A 100%);
-  color: var(--ql-white);
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, hsl(var(--ql-gold)) 0%, hsl(var(--ql-gold-dark)) 100%);
+  color: hsl(var(--ql-white));
+  border-color: hsl(var(--ql-gold-dark));
   box-shadow: 
-    0 8px 24px rgba(180, 141, 58, 0.35),
-    0 4px 8px rgba(0, 0, 0, 0.15);
+    0 12px 32px hsla(var(--ql-gold) / 0.4),
+    0 6px 16px hsla(0 0% 0% / 0.15),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.2);
+}
+
+.ql-btn-secondary:hover::before {
+  left: 100%;
 }
 
 .ql-btn-verify {
-  background: linear-gradient(135deg, var(--ql-green) 0%, #059669 100%);
-  color: var(--ql-white);
+  background: linear-gradient(135deg, hsl(var(--ql-success-green)) 0%, hsl(160 84% 35%) 100%);
+  color: hsl(var(--ql-white));
   font-family: var(--font-sans);
   font-weight: 500;
   padding: 12px 24px;
@@ -306,18 +371,19 @@
   transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
   font-size: 0.875rem;
   box-shadow: 
-    0 3px 8px rgba(16, 185, 129, 0.25),
-    0 1px 3px rgba(0, 0, 0, 0.1);
+    0 3px 8px hsla(var(--ql-success-green) / 0.25),
+    0 1px 3px hsla(0 0% 0% / 0.1),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.2);
 }
 
 .ql-btn-verify:hover {
-  transform: translateY(-1px) scale(1.02);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 
-    0 6px 16px rgba(16, 185, 129, 0.35),
-    0 2px 6px rgba(0, 0, 0, 0.15);
+    0 8px 20px hsla(var(--ql-success-green) / 0.4),
+    0 3px 8px hsla(0 0% 0% / 0.15),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.3);
 }
 
-/* Premium Ripple Effect for Verify Button */
 .ql-btn-verify::after {
   content: '';
   position: absolute;
@@ -326,7 +392,7 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, hsla(var(--ql-white) / 0.4) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   transition: width 400ms cubic-bezier(0.2, 0.8, 0.2, 1), height 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -376,18 +442,24 @@
 
 .ql-card {
   background: 
-    linear-gradient(135deg, #FFFFFF 0%, rgba(243, 244, 246, 0.5) 100%),
-    linear-gradient(45deg, rgba(180, 141, 58, 0.02) 0%, transparent 60%);
+    linear-gradient(135deg, 
+      hsl(var(--ql-white)) 0%, 
+      hsl(var(--ql-luxury-bg)) 100%
+    ),
+    radial-gradient(circle at top right, 
+      hsla(var(--ql-gold) / 0.04) 0%, 
+      transparent 60%
+    );
   border-radius: calc(var(--card-radius) * 1.5);
   box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.08),
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(107, 114, 128, 0.08);
+    0 6px 20px hsla(0 0% 0% / 0.08),
+    0 3px 6px hsla(0 0% 0% / 0.04),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.9);
+  border: 1px solid hsla(var(--ql-warm) / 0.08);
   padding: 32px;
   position: relative;
   overflow: hidden;
-  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .ql-card::before {
@@ -397,27 +469,37 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(180, 141, 58, 0.2) 50%, transparent 100%);
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsla(var(--ql-gold) / 0.3) 50%, 
+    transparent 100%
+  );
 }
 
 .ql-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 
-    0 12px 32px rgba(0, 0, 0, 0.12),
-    0 4px 8px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 16px 40px hsla(0 0% 0% / 0.12),
+    0 6px 12px hsla(0 0% 0% / 0.06),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.95);
 }
 
 .ql-card-elevated {
   background: 
-    linear-gradient(135deg, #FFFFFF 0%, rgba(243, 244, 246, 0.3) 100%),
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.03) 0%, transparent 60%);
+    linear-gradient(135deg, 
+      hsl(var(--ql-white)) 0%, 
+      hsl(var(--ql-luxury-bg)) 100%
+    ),
+    radial-gradient(circle at top right, 
+      hsla(var(--ql-trust-blue) / 0.04) 0%, 
+      transparent 60%
+    );
   box-shadow: 
-    0 8px 24px rgba(0, 0, 0, 0.12),
-    0 4px 8px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    inset 0 0 0 1px rgba(180, 141, 58, 0.05);
-  border: 1px solid rgba(180, 141, 58, 0.1);
+    0 12px 32px hsla(0 0% 0% / 0.12),
+    0 6px 12px hsla(0 0% 0% / 0.06),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.95),
+    inset 0 0 0 1px hsla(var(--ql-gold) / 0.08);
+  border: 1px solid hsla(var(--ql-gold) / 0.12);
 }
 
 .ql-card-elevated::after {
@@ -428,17 +510,20 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at bottom left, 
+      hsla(var(--ql-success-green) / 0.03) 0%, 
+      transparent 50%
+    );
   pointer-events: none;
 }
 
 .ql-card-elevated:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.03);
   box-shadow: 
-    0 16px 48px rgba(0, 0, 0, 0.15),
-    0 6px 12px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 0 0 1px rgba(180, 141, 58, 0.08);
+    0 20px 60px hsla(0 0% 0% / 0.16),
+    0 8px 20px hsla(0 0% 0% / 0.08),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.98),
+    inset 0 0 0 1px hsla(var(--ql-gold) / 0.12);
 }
 
 /* === ANIMATION SYSTEM === */
@@ -468,6 +553,171 @@
   }
   to {
     stroke-dasharray: 88 100;
+  }
+}
+
+/* === LUXURY SCROLLING ANIMATIONS === */
+
+.ql-horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  gap: 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ql-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.ql-scroll-item {
+  flex: 0 0 320px;
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ql-scroll-item:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.ql-scroll-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.ql-scroll-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, 
+    hsl(var(--ql-gold)) 0%, 
+    hsl(var(--ql-gold-dark)) 100%
+  );
+  border: none;
+  color: hsl(var(--ql-white));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 
+    0 4px 12px hsla(var(--ql-gold) / 0.3),
+    0 2px 4px hsla(0 0% 0% / 0.1);
+}
+
+.ql-scroll-btn:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 
+    0 8px 24px hsla(var(--ql-gold) / 0.4),
+    0 4px 8px hsla(0 0% 0% / 0.15);
+}
+
+.ql-scroll-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* === LUXURY HOVER EFFECTS === */
+
+.ql-luxury-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ql-luxury-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    hsla(var(--ql-gold) / 0.1), 
+    transparent
+  );
+  transition: left 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+}
+
+.ql-luxury-hover:hover::before {
+  left: 100%;
+}
+
+.ql-enterprise-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, 
+    hsla(var(--ql-gold) / 0.1) 0%, 
+    hsla(var(--ql-gold) / 0.05) 100%
+  );
+  border: 1px solid hsla(var(--ql-gold) / 0.15);
+  box-shadow: 
+    0 6px 20px hsla(var(--ql-gold) / 0.15),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.8);
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ql-enterprise-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, 
+    hsla(var(--ql-gold) / 0.2) 0%, 
+    hsla(var(--ql-gold) / 0.1) 100%
+  );
+  box-shadow: 
+    0 12px 32px hsla(var(--ql-gold) / 0.25),
+    inset 0 1px 0 hsla(var(--ql-white) / 0.9);
+}
+
+.ql-floating-animation {
+  animation: qlFloating 6s ease-in-out infinite;
+}
+
+@keyframes qlFloating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* === LUXURY GRADIENT ORBS === */
+
+.ql-gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    hsla(var(--ql-gold) / 0.4) 0%, 
+    hsla(var(--ql-gold) / 0.1) 50%, 
+    transparent 100%
+  );
+  animation: qlOrbPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ql-gradient-orb--blue {
+  background: radial-gradient(circle, 
+    hsla(var(--ql-trust-blue) / 0.3) 0%, 
+    hsla(var(--ql-trust-blue) / 0.1) 50%, 
+    transparent 100%
+  );
+  animation-delay: -2s;
+}
+
+@keyframes qlOrbPulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.2);
+    opacity: 0.8;
   }
 }
 
@@ -505,18 +755,18 @@ body {
 
 /* === UTILITY CLASSES === */
 
-.ql-text-gold { color: var(--ql-gold); }
-.ql-text-dark { color: var(--ql-dark); }
-.ql-text-navy { color: var(--ql-navy); }
-.ql-text-warm { color: var(--ql-warm); }
-.ql-text-blue { color: var(--ql-blue); }
-.ql-text-green { color: var(--ql-green); }
-.ql-text-amber { color: var(--ql-amber); }
+.ql-text-gold { color: hsl(var(--ql-gold)); }
+.ql-text-dark { color: hsl(var(--ql-dark)); }
+.ql-text-navy { color: hsl(var(--ql-navy)); }
+.ql-text-warm { color: hsl(var(--ql-warm)); }
+.ql-text-blue { color: hsl(var(--ql-trust-blue)); }
+.ql-text-green { color: hsl(var(--ql-success-green)); }
+.ql-text-amber { color: hsl(var(--ql-alert-amber)); }
 
-.ql-bg-gold { background-color: var(--ql-gold); }
-.ql-bg-dark { background-color: var(--ql-dark); }
-.ql-bg-navy { background-color: var(--ql-navy); }
-.ql-bg-light { background-color: var(--ql-light); }
-.ql-bg-off { background-color: var(--ql-off); }
-.ql-bg-blue { background-color: var(--ql-blue); }
-.ql-bg-green { background-color: var(--ql-green); }
+.ql-bg-gold { background-color: hsl(var(--ql-gold)); }
+.ql-bg-dark { background-color: hsl(var(--ql-dark)); }
+.ql-bg-navy { background-color: hsl(var(--ql-navy)); }
+.ql-bg-light { background-color: hsl(var(--ql-light)); }
+.ql-bg-off { background-color: hsl(var(--ql-off)); }
+.ql-bg-blue { background-color: hsl(var(--ql-trust-blue)); }
+.ql-bg-green { background-color: hsl(var(--ql-success-green)); }
