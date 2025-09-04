@@ -2,5 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Project styles */
-@import './App.css'; 
+:root {
+  /* Quentlex Brand Colors */
+  --quentlex-gold: 43 84% 47%;
+  --quentlex-dark: 210 23% 17%;
+  --deep-navy: 214 34% 15%;
+  --warm-gray: 220 9% 46%;
+  --light-gray: 210 20% 95%;
+  --trust-blue: 217 91% 60%;
+  --success-green: 158 64% 52%;
+  --alert-amber: 38 92% 50%;
+  --pure-white: 0 0% 100%;
+  --off-white: 0 0% 98%;
+  --charcoal: 215 25% 27%;
+}
